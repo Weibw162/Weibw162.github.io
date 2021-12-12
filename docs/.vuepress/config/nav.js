@@ -42,9 +42,6 @@ module.exports = [
                 link:'/pages/5aa29a/'
               }
             ]
-          },
-          {
-            text:'Redis'
           }
         ]
       },
