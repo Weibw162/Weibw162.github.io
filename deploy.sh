@@ -9,9 +9,10 @@ npm run build
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
+echo "推送到Github开始"
 # deploy to github pages
 git push -f git@github.com:weibw162/weibw162.github.io.git master
-
+echo "推送到Github结束"
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
   githubUrl=git@github.com:weibw162/weibw162.github.io.git
@@ -24,8 +25,9 @@ fi
 git init
 git add -A
 git commit -m "${msg}"
+echo "上传github开始"
 git push -f $githubUrl master:gh-pages # 推送到github gh-pages分支
-
+echo "上传github完成"
 # deploy to coding pages
 # echo 'www.xugaoyi.com\nxugaoyi.com' > CNAME  # 自定义域名
 # echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件
