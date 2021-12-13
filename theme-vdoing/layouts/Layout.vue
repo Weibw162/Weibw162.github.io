@@ -19,7 +19,7 @@
         <div class="sidebar-slot sidebar-slot-bottom" v-html="sidebarSlotBottom"></div>
       </template>
       <!-- <slot name="sidebar-top" #top />
-      <slot name="sidebar-bottom" #bottom /> -->
+      <slot name="sidebar-bottom" #bottom />-->
     </Sidebar>
 
     <!-- 首页 -->
@@ -49,8 +49,9 @@
       <slot
         name="page-bottom"
         #bottom
-      /> -->
+      />-->
     </Page>
+    <Footer />
 
     <Buttons ref="buttons" @toggle-theme-mode="toggleThemeMode" />
 

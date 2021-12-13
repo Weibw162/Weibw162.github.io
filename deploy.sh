@@ -11,7 +11,6 @@ cd docs/.vuepress/dist
 
 echo "推送到Github开始"
 # deploy to github pages
-git push -f git@github.com:weibw162/weibw162.github.io.git master
 echo "推送到Github结束"
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'

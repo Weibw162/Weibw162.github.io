@@ -1,9 +1,6 @@
 <template>
   <div class="footer">
-    <div
-      class="icons"
-      v-if="social && social.icons"
-    >
+    <div class="icons" v-if="social && social.icons">
       <a
         :href="item.link"
         :title="item.title"
@@ -22,7 +19,7 @@
       title="本站主题"
     >Vdoing</a>
     <template v-if="footer">
-      | Copyright © {{ footer.createYear }}-{{ new Date().getFullYear() }}
+      | Copyright © {{ footer.createYear }}-{{ new Date().getFullYear() }}s
       <span
         v-html="footer.copyrightInfo"
       ></span>
@@ -33,10 +30,10 @@
 <script>
 export default {
   computed: {
-    social () {
+    social() {
       return this.$themeConfig.social
     },
-    footer () {
+    footer() {
       return this.$themeConfig.footer
     }
   }

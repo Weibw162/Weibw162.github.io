@@ -21,7 +21,7 @@ module.exports = {
     editLinks: true, // 启用编辑
     editLinkText: '编辑',
 
-   
+
     sidebar: 'structuring',
 
     // 文章默认的作者信息，可在md文件中单独配置此信息 String | {name: String, link: String}
@@ -53,7 +53,10 @@ module.exports = {
       ],
     },
 
-
+    footer: { // 页脚信息
+      createYear: 2021, // 博客创建年份
+      copyrightInfo: '| Weibw | <a href="https://beian.miit.gov.cn/" target="_blank" style="font-weight:normal">辽ICP备18015889号</a> ', // 博客版权信息，支持a标签
+    },
 
   },
 
