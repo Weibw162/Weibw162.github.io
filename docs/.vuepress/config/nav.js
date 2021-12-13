@@ -48,5 +48,22 @@ module.exports = [
       {
         text:'算法',
         link:'/algorithm/'
+      },
+      {
+        text:'其他技术',
+        link:'/other/'
+      },
+      {
+        text:'更多',
+        items:[
+          {
+            text:'微信公众号文章',
+            link:'/pages/b6414a/'
+          },
+          {
+            text:'优秀博客文章',
+            link:'/pages/9e1569/'
+          }
+        ]
       }
     ]
