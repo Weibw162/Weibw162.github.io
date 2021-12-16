@@ -64,6 +64,10 @@ module.exports = [
           {
             text:'优秀博客文章',
             link:'/pages/9e1569/'
+          },
+          {
+            text:'其他',
+            link:'/pages/030cd4/'
           }
         ]
       },
