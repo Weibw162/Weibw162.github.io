@@ -21,6 +21,10 @@ module.exports = [
               {
                 text:'Python基础知识',
                 link:'/pages/53241b/'
+              },
+              {
+                text:'Python CookBook第三版',
+                link:'/python/cookbook3/'
               }
             ]
           }
