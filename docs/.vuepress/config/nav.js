@@ -55,7 +55,13 @@ module.exports = [
       },
       {
         text:'其他技术',
-        link:'/other/'
+        link:'/other/',
+        items:[
+          {
+            text:'Git',
+            link:'/study/git/'
+          },
+        ]
       },
       {
         text:'更多',
