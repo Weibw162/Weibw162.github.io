@@ -42,6 +42,10 @@ module.exports = [
                 link:'/pages/96d563/'
               },
               {
+                text:'MySQL调优',
+                link:'/pages/44715d/'
+              },
+              {
                 text:'MySQL面试题',
                 link:'/pages/5aa29a/'
               }
