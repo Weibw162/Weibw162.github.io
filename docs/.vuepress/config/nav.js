@@ -25,6 +25,10 @@ module.exports = [
               {
                 text:'Python CookBook第三版',
                 link:'/python/cookbook3/'
+              },
+              {
+                text:'Flask',
+                link:'/python/flask/'
               }
             ]
           }
