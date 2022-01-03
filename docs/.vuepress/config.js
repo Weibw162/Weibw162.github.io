@@ -1,4 +1,5 @@
 const htmlModules = require('./config/htmlModules.js');
+const { readFileList, readTotalFileWords, readEachFileWords } = require('./webSiteInfo/readFile');
 
 module.exports = {
   // theme: 'vdoing', // 使用npm包主题
@@ -28,6 +29,19 @@ module.exports = {
 
 
     sidebar: 'structuring',
+
+    // 博客站点信息（首页）
+blogInfo: {
+	blogCreate: '2021-12-01', // 博客创建时间
+	mdFileCountType: 'archives',  // 开启文档数。1. archives 获取归档的文档数（默认）。2. 数组 readFileList(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文档数。温馨提示：readFileList() 获取 docs 下所有的 md 文档
+	totalWords: 'archives',  // 开启本站文档总字数。1. archives 获取归档的文档数（使用 archives 条件：传入 eachFileWords，否则报错）。2. readTotalFileWords(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文章字数。无默认值
+	eachFileWords: readEachFileWords(),  // 开启每个文章页的字数。readEachFileWords(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文章字数，无默认值。readEachFileWords() 方法默认排除了 article 为 false 的文章
+	moutedEvent: '.blogger-wrapper',   // 首页的站点模块挂载在某个元素后面（支持各种选择器），指的是挂载在哪个兄弟元素的后面，默认是热门标签 '.tags-wrapper' 下面，提示 '.categories-wrapper' 在文章分类下面。'.blogger-wrapper' 在博客头像模块下面
+	pageView: true,  // 开启文章页的浏览量统计，默认 true（开启）
+  indexIteration: 2500,   // 如果首页获取访问量失败，则每隔多少时间后获取一次访问量，直到获取成功或获取 10 次后。默认 3 秒。注意：设置时间太低，可能导致访问量 + 2、+ 3 ......，测试 3 秒后最稳
+  pageIteration: 2500,    // 如果文章页获取访问量失败，则每隔多少时间后获取一次访问量，直到获取成功或获取 10 次后。默认 3 秒。注意：设置时间太低，可能导致访问量 + 2、+ 3 ...... 测试 3 秒后最稳
+},
+
 
     // 文章默认的作者信息，可在md文件中单独配置此信息 String | {name: String, link: String}
     author: {
@@ -68,6 +82,8 @@ module.exports = {
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
     ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
+    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
+    ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3077305_wawne43ztng.css' }],
     [
       'meta',
       {
