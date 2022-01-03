@@ -21,7 +21,7 @@ module.exports = {
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
     repo: 'weibw162/weibw162.github.io', // 导航栏右侧生成Github链接
-    searchMaxSuggestions: 10, // 搜索结果显示最大数
+    searchMaxSuggestions: 30, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
     editLinks: true, // 启用编辑
@@ -93,6 +93,8 @@ blogInfo: {
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
     ['meta', { name: 'theme-color', content: '#646cff' }], // 移动浏览器主题颜色
+    // 引入自定义js
+    ["script", {"language": "javascript", "type": "text/javascript", "src": "/js/pgmanor-self.js"}],
   ],
 
 
@@ -126,5 +128,6 @@ blogInfo: {
         },
       },
     ],
+    'fulltext-search'
   ],
 }
