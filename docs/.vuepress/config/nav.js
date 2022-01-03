@@ -47,7 +47,7 @@ module.exports = [
               },
               {
                 text:'MySQL调优',
-                link:'/pages/44715d/'
+                link:'/mysql/mysqlty/'
               },
               {
                 text:'MySQL面试题',
