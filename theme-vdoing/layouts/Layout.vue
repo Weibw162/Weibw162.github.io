@@ -285,9 +285,9 @@ export default {
     _autoMode() {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         // 系统处于深色模式
-        this.themeMode = "dark"
+        this.themeMode = "read"
       } else {
-        this.themeMode = "light"
+        this.themeMode = "read"
       }
     },
     toggleThemeMode(key) {
