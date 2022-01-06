@@ -1,11 +1,7 @@
 <template>
   <div class="home-wrapper">
     <!-- banner块 s -->
-    <div
-      class="banner"
-      :class="{ 'hide-banner': !showBanner }"
-      :style="bannerBgStyle"
-    >
+    <div class="banner" :class="{ 'hide-banner': !showBanner }" :style="bannerBgStyle">
       <div
         class="banner-conent"
         :style="
@@ -18,12 +14,8 @@
             :src="$withBase(homeData.heroImage)"
             :alt="homeData.heroAlt"
           />
-          <h1 v-if="homeData.heroText" id="main-title">
-            {{ homeData.heroText }}
-          </h1>
-          <p v-if="homeData.tagline" class="description">
-            {{ homeData.tagline }}
-          </p>
+          <h1 v-if="homeData.heroText" id="main-title">{{ homeData.heroText }}</h1>
+          <p v-if="homeData.tagline" class="description">{{ homeData.tagline }}</p>
           <p class="action" v-if="homeData.actionText && homeData.actionLink">
             <NavLink class="action-button" :item="actionLink" />
           </p>
@@ -31,11 +23,7 @@
 
         <!-- PC端features块 s -->
         <div class="features" v-if="hasFeatures && !isMQMobile">
-          <div
-            class="feature"
-            v-for="(feature, index) in homeData.features"
-            :key="index"
-          >
+          <div class="feature" v-for="(feature, index) in homeData.features" :key="index">
             <router-link v-if="feature.link" :to="feature.link">
               <img
                 class="feature-img"
@@ -67,11 +55,7 @@
         <div class="banner-wrapper">
           <div class="slide-banner-scroll" ref="slide">
             <div class="slide-banner-wrapper">
-              <div
-                class="slide-item"
-                v-for="(feature, index) in homeData.features"
-                :key="index"
-              >
+              <div class="slide-item" v-for="(feature, index) in homeData.features" :key="index">
                 <router-link v-if="feature.link" :to="feature.link">
                   <img
                     class="feature-img"
@@ -119,9 +103,7 @@
         />
 
         <!-- 详情版文章列表 -->
-        <template
-          v-else-if="!homeData.postList || homeData.postList === 'detailed'"
-        >
+        <template v-else-if="!homeData.postList || homeData.postList === 'detailed'">
           <PostList :currentPage="currentPage" :perPage="perPage" />
           <Pagination
             :total="total"
@@ -150,11 +132,7 @@
           :tagsData="$categoriesAndTags.tags"
           :length="30"
         />
-        <div
-          class="custom-html-box card-box"
-          v-if="homeSidebarB"
-          v-html="homeSidebarB"
-        ></div>
+        <div class="custom-html-box card-box" v-if="homeSidebarB" v-html="homeSidebarB"></div>
       </template>
     </MainLayout>
   </div>
@@ -177,7 +155,7 @@ const MOBILE_DESKTOP_BREAKPOINT = 720 // refer to config.styl
 BScroll.use(Slide)
 
 export default {
-  data () {
+  data() {
     return {
       isMQMobile: false,
 
@@ -192,25 +170,25 @@ export default {
     }
   },
   computed: {
-    homeData () {
+    homeData() {
       return {
         ...this.$page.frontmatter
       }
     },
-    hasFeatures () {
+    hasFeatures() {
       return !!(this.homeData.features && this.homeData.features.length)
     },
-    homeSidebarB () {
+    homeSidebarB() {
       const { htmlModules } = this.$themeConfig
       return htmlModules ? htmlModules.homeSidebarB : ''
     },
-    showBanner () { // 当分页不在第一页时隐藏banner栏
+    showBanner() { // 当分页不在第一页时隐藏banner栏
       return this.$route.query.p
         && this.$route.query.p != 1
         && (!this.homeData.postList || this.homeData.postList === 'detailed')
         ? false : true
     },
-    bannerBgStyle () {
+    bannerBgStyle() {
       let bannerBg = this.homeData.bannerBg
       if (!bannerBg || bannerBg === 'auto') { // 默认
         if (this.$themeConfig.bodyBgImg) { // 当有bodyBgImg时，不显示背景
@@ -231,7 +209,7 @@ export default {
       }
 
     },
-    actionLink () {
+    actionLink() {
       return {
         link: this.homeData.actionLink,
         text: this.homeData.actionText
@@ -239,13 +217,13 @@ export default {
     }
   },
   components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination },
-  created () {
+  created() {
     this.total = this.$sortPosts.length
   },
-  beforeMount () {
+  beforeMount() {
     this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
   },
-  mounted () {
+  mounted() {
     if (this.$route.query.p) {
       this.currentPage = Number(this.$route.query.p)
     }
@@ -266,12 +244,12 @@ export default {
       })
     }
   },
-  beforeDestroy () {
+  beforeDestroy() {
     clearTimeout(this.playTimer)
     this.slide && this.slide.destroy()
   },
   watch: {
-    '$route.query.p' () {
+    '$route.query.p'() {
       if (!this.$route.query.p) {
         this.currentPage = 1
       } else {
@@ -287,7 +265,7 @@ export default {
     }
   },
   methods: {
-    init () {
+    init() {
       clearTimeout(this.playTimer)
       this.slide = new BScroll(this.$refs.slide, {
         scrollX: true, // x轴滚动
@@ -317,16 +295,16 @@ export default {
       })
       this.autoGoNext()
     },
-    autoGoNext () {
+    autoGoNext() {
       clearTimeout(this.playTimer)
       this.playTimer = setTimeout(() => {
         this.slide.next()
       }, 4000)
     },
-    handlePagination (i) { // 分页
+    handlePagination(i) { // 分页
       this.currentPage = i
     },
-    getScrollTop () {
+    getScrollTop() {
       return window.pageYOffset
         || document.documentElement.scrollTop
         || document.body.scrollTop
@@ -338,6 +316,7 @@ export default {
 
 <style lang="stylus" scoped>
 .home-wrapper
+  background-image: 
   .banner
     width 100%
     min-height 450px

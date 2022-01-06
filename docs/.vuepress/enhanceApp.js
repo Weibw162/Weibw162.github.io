@@ -19,7 +19,7 @@ export default ({
       setTimeout(() => {
         if (to.path == '/') {       // 如果页面是首页
           const { indexIteration } = siteData.themeConfig.blogInfo;
-          getIndexViewCouter(indexIteration);
+          // getIndexViewCouter(indexIteration);
         }
         else if (to.path !== '/' && to.path !== from.path) { // // 如果页面是非首页，# 号也会触发路由变化，这里已经排除掉
           // 刷新页面或进入新的页面后，如果原来位置的内容还存在，则删除掉，最后重新插入渲染

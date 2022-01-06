@@ -2,10 +2,7 @@
   <header class="navbar blur">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
-    <router-link
-      :to="$localePath"
-      class="home-link"
-    >
+    <router-link :to="$localePath" class="home-link">
       <img
         class="logo"
         v-if="$site.themeConfig.logo"
@@ -26,10 +23,7 @@
         'max-width': linksWrapMaxWidth + 'px'
       } : {}"
     >
-      <AlgoliaSearchBox
-        v-if="isAlgoliaSearch"
-        :options="algolia"
-      />
+      <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
       <SearchBox
         v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"
       />
@@ -47,13 +41,13 @@ import NavLinks from '@theme/components/NavLinks.vue'
 export default {
   components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
 
-  data () {
+  data() {
     return {
       linksWrapMaxWidth: null
     }
   },
 
-  mounted () {
+  mounted() {
     const MOBILE_DESKTOP_BREAKPOINT = 719 // refer to config.styl
     const NAVBAR_VERTICAL_PADDING = parseInt(css(this.$el, 'paddingLeft')) + parseInt(css(this.$el, 'paddingRight'))
     const handleLinksWrapWidth = () => {
@@ -69,17 +63,17 @@ export default {
   },
 
   computed: {
-    algolia () {
+    algolia() {
       return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
     },
 
-    isAlgoliaSearch () {
+    isAlgoliaSearch() {
       return this.algolia && this.algolia.apiKey && this.algolia.indexName
     }
   }
 }
 
-function css (el, property) {
+function css(el, property) {
   // NOTE: Known bug, will return 'auto' if style value is 'auto'
   const win = el.ownerDocument.defaultView
   // null means not to return pseudo styles
@@ -92,6 +86,7 @@ $navbar-vertical-padding = 0.7rem
 $navbar-horizontal-padding = 1.5rem
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
+  background-color rgba(255,255,255,0.1)
   line-height $navbarHeight - 1.4rem
   transition transform 0.3s
   a, span, img

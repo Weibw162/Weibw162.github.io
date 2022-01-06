@@ -26,6 +26,7 @@ module.exports = {
     docsDir: 'docs', // 编辑的文件夹
     editLinks: true, // 启用编辑
     editLinkText: '编辑',
+    bodyBgImg:'https://cdn.jsdelivr.net/gh/Weibw162/image-hosting@dev/杂录/伊蕾雅.5vklmk9v83o0.webp',
 
 
     sidebar: 'structuring',
@@ -51,7 +52,7 @@ blogInfo: {
 
     // 博主信息，显示在首页侧边栏
     blogger: {
-      avatar: 'https://cdn.jsdelivr.net/gh/Weibw162/image-hosting@master/20211214/20211214头像.5hve7b164yc0.jpg',
+      avatar: 'https://cdn.jsdelivr.net/gh/Weibw162/image-hosting@dev/杂录/image.735febsv1zo0.webp',
       name: 'Weibw',
       slogan: '一个没有梦想的咸鱼',
     },

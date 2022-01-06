@@ -34,7 +34,7 @@
       </div>
     </div>
 
-    <div class="webinfo-item">
+    <!-- <div class="webinfo-item">
       <div class="webinfo-item-title">本站被访问了：</div>
       <div class="webinfo-content">
         <span id="busuanzi_container_site_pv">
@@ -50,7 +50,7 @@
           <span id="busuanzi_value_site_uv" class="web-site-uv"></span> 名
         </span>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 

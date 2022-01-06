@@ -8,13 +8,13 @@
 <script>
 import { type } from '../util'
 export default {
-  data () {
+  data() {
     return {
       bgImg: '',
-      opacity: 0.5
+      opacity: 1
     }
   },
-  mounted () {
+  mounted() {
     let { bodyBgImg, bodyBgImgOpacity } = this.$themeConfig
 
     if (type(bodyBgImg) === 'string') {
