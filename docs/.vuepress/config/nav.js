@@ -20,7 +20,7 @@ module.exports = [
             items:[
               {
                 text:'Python基础知识',
-                link:'/pages/53241b/'
+                link:'/python/base/'
               },
               {
                 text:'Python CookBook第三版',
