@@ -30,6 +30,9 @@ module.exports = {
 
 
     sidebar: 'structuring',
+    indexImg: {
+      navColor: 2,    // 导航栏左侧名字、中间搜索框、右侧字体颜色，1 是黑色，2 是白色。默认是 1
+    },
 
     // 博客站点信息（首页）
 blogInfo: {
