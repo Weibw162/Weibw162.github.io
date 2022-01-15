@@ -347,7 +347,18 @@ export default {
           max-width 40rem
           font-size 1.1rem
           line-height 1.3
-          opacity 0.9
+          opacity 1
+          color: #fffae6
+          letter-spacing:2px
+          padding:10px 20px
+          gap: 20px;
+          border-radius: 5px;
+          backdrop-filter: blur(5px);
+          background-color: rgba(64, 158, 255, 0.075);
+          box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+          border: 0px rgba(255, 255, 255, 0.4) solid;
+          border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
+          border-right: 0px rgba(40, 40, 40, 0.35) solid;
         .action-button
           display inline-block
           font-size 1.2rem
