@@ -81,7 +81,7 @@ module.exports = [
           },
           {
             text:'优秀博客文章',
-            link:'/pages/9e1569/'
+            link:'/pages/e444e7/'
           },
           {
             text:'其他',
