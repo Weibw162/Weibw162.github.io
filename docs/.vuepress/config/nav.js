@@ -66,6 +66,10 @@ module.exports = [
         link:'/other/',
         items:[
           {
+            text:'FineReport',
+            link:'/pages/e52678/'
+          },
+          {
             text:'Git',
             link:'/study/git/'
           },
