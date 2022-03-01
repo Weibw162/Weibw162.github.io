@@ -70,6 +70,10 @@ module.exports = [
             link:'/pages/e52678/'
           },
           {
+            text:'Kettle',
+            link:'/pages/fde6a7/'
+          },
+          {
             text:'Git',
             link:'/study/git/'
           },
