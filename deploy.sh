@@ -9,7 +9,7 @@ npm run build
 # 进入生成的文件夹
 cd docs/.vuepress/dist
 
-echo 'weibw162.com' > CNAME
+echo 'blog.weibw162.com' > CNAME
 if [ -z "$GITHUB_TOKEN" ]; then
   msg='deploy'
   githubUrl=git@github.com:weibw162/weibw162.github.io.git
